@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+ <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<center>
+	<h2><br>
+
+     <span class="title">CASIO&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span> 
+	<span><input type="box" class="screen1" name="input_box" value="| | | | | | | "></span><br>
+	<span class="ti">WAQAS KHURSHEED&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspfx=260 SOLAR</span>
+	<br>
+        
+     
+	<span><input type="text" class="screen" name="input_box" placeholder="0000000000000000000000000000000000" class="pl"></span>
+	<br>
+     <span class="ti"> left&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspright</span>
+	<br>
+
+
+
+	<span><input onclick="ButtonClick()" type="button" class="ON" name="buttonON" value="ON"/></span>
+	<span><input onclick="ButtonClick()" type="button" class="longb" name="buttonon" value="<"></span>
+	<span><input onclick="ButtonCli ck()" type="button"  class="longb" name="button8" value=">"></span>
+	<span><input onclick="ButtonClick()" type="button" class="OFF" name="buttonOFF" value="OFF"/></span>
+	<br><br>
+	<span><input onclick="ButtonClick()" type="button" class="MC" name="buttonb" value="MC"/></span>
+
+	<span><input onclick="ButtonClick()" type="button" class="MC" name="buttonon" value="MR"/></span>
+	<span><input onclick="ButtonClick()" type="button"  class="MC" name="button8" value="M+"/></span>
+	<span><input onclick="ButtonClick()" type="button" class="MC" name="button9" value="M-"/></span>
+	<span><input onclick="ButtonClick()" type="button" class="MC" name="buttonb" value="MS"/></span>
+	<br><br>
+	<span><input onclick="ButtonClick()" type="button" class="b" name="button7" value ="%"/></span>
+	<span><input onclick="ButtonClick()" type="button" class="b" name="buttonon" value="CE"/></span>
+	<span><input onclick="ButtonClick()" type="button"  class="b" name="button8" value="C"/></span>
+	<span><input onclick="ButtonClick()" type="button" class="b" name="button9" value="?"/></span>
+	<span><input onclick="ButtonClick()" type="button" class="mbutton" name="buttonb" value="/"/></span>
+	<br><br>
+	<span><input onclick="ButtonClick()" type="button" class="b" name="button7" value="?"/></span>
+	<span><input onclick="ButtonClick()" type="button" class="mybutton" name="buttonon" value="7"/></span>
+	<span><input onclick="ButtonClick(8)" type="button"  class="mybutton" name="button8" value="8"/></span>
+	<span><input onclick="ButtonClick(9)" type="button" class="mybutton" name="button9" value="9"/></span>
+	<span><input onclick="ButtonClick('b')" type="button" class="mbutton" name="buttonb" value="x"/></span>
+	<br><br>
+	<span><input onclick="ButtonClick(7)" type="button" class="b" name="button7" value="?"/></span>
+	<span><input onclick="ButtonClick('ON')" type="button" class="mybutton" name="buttonon" value="4"/></span>
+	<span><input onclick="ButtonClick(8)" type="button"  class="mybutton" name="button8" value="5"/></span>
+	<span><input onclick="ButtonClick(9)" type="button" class="mybutton" name="button9" value="6"/></span>
+	<span><input onclick="ButtonClick('b')" type="button" class="mbutton" name="buttonb" value="-"/></span>
+	<br><br>
+	<span><input onclick="ButtonClick(7)" type="button" class="b" name="button7" value="?"/></span>
+	<span><input onclick="ButtonClick(8)" type="button"  class="mybutton" name="button8" value="1"/></span>
+	<span><input onclick="ButtonClick(9)" type="button" class="mybutton" name="button9" value="2"/></span>
+	<span><input onclick="ButtonClick('b')" type="button" class="mybutton" name="buttonb" value="3"/></span>
+	<span><input onclick="ButtonClick('ON')" type="button" class="mbutton" name="buttonon" value="+"/></span>
+	<br><br>
+	<span><input onclick="ButtonClick(4)" type="button" class="b" name="button4" value="?"/></span>
+	<span><input onclick="ButtonClick(5)" type="button" class="b" name="button5" value="?"/></span>
+	<span><input onclick="ButtonClick(6)" type="button" class="mybutton" name="button6" value="0"/></span>
+	<span><input onclick="ButtonClick('  -')" type="button" class="mbutton" name="button-" value="."/></span>
+	<span><input onclick="ButtonClick()" type="button" class="mbutton" name="button+" value="="/></span>
+	<br>
+	<span class="title">STANDARD</span>
+	
+
+</h2>
+	
+ 	</center>
+</body>
+<script type="text/javascript">
+	Num1 = 0;
+	Result = 0;
+	Operator = "";
+
+	isDotUsed = false;
+
+	function ButtonClick(x){
+		var screen=document.querySelector('.screen');
+		if (x == '=') {
+			if (Operator ==!"" ) {
+
+			}else if (Operator == '+') {
+				Result = +screen.value + +Num1;
+				screen.value = Result;
+			
+			}else if (Operator == '-') {
+				Result = +Num1 - +screen.value;
+				screen.value = Result;
+
+			}else if (Operator == 'x') {
+				Result = +Num1 * +screen.value;
+				screen.value = Result;
+
+			}else if (Operator == '/') {
+				Result = +Num1 / +screen.value;
+				screen.value = Result
+			
+			}
+		}else if (x == '+') {
+			Num1 = screen.value;
+			Operator  = "+";
+			screen.value = "";
+		
+		}else if (x == '-') {
+			Num1 = screen.value;
+			Operator = "-";
+			screen.value = "";
+
+		}else if (x == 'x') {
+			Num1 = screen.value;
+			Operator = "x";
+			screen.value = "";
+
+		}else if (x == '/') {
+			Num1 = screen.value;
+			Operator = "/";
+			screen.value = "";
+
+
+		}else if (x == 'ON') {
+			screen.value = "";
+	Num1 = 0;
+	Result = 0;
+	Operator = "";
+		}else if (x == ".") {
+			if (!isDotUsed) {
+				isDotUsed = true;
+				screen.value = screen.value + x;
+			}
+		}else{
+
+
+		screen.value = screen.value + x;
+	}
+}
+</script>
+<span class="t">MUHAMMAD WAQAS KHURSHEED</span>
+</html>
